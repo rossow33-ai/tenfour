@@ -1,5 +1,5 @@
-const C='tenfour-v3';
-const PRE=['./','index.html','apps.json','icon-192.png','app-75hard.png','app-a350.png','app-tides.png','app-neon.png'];
+const C='tenfour-v4';
+const PRE=['./','index.html','apps.json','icon-192.png','app-75hard.png','app-a350.png','app-tides.png','app-palm.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(PRE)))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
